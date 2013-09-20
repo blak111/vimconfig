@@ -1,10 +1,16 @@
+call pathogen#infect()
+call pathogen#helptags()
+call vundle#rc()
+Bundle 'gmarik/vundle'
+"Bundle 'Valloric/YouCompleteMe'
 execute pathogen#infect()
 
 " Colorscheme settings.
 syntax enable
-"set t_Co=256
-"set background=dark
-"colorscheme solarized
+set t_Co=256
+set background=dark
+let g:solarized_termcolors=256
+colorscheme solarized
 
 " Font
 set guifont=Source\ Code\ Pro\ Light:h12
@@ -20,16 +26,16 @@ set so=14
 
 
 " Highlight cursor line.
-"augroup CursorLine
-"  au!
-"  au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
-"  au VimEnter,WinEnter,BufWinEnter * setlocal cursorcolumn
-"  au WinLeave * setlocal nocursorline
-"  au WinLeave * setlocal nocursorcolumn
-"augroup END
+augroup CursorLine
+  au!
+  au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+  au VimEnter,WinEnter,BufWinEnter * setlocal cursorcolumn
+  au WinLeave * setlocal nocursorline
+  au WinLeave * setlocal nocursorcolumn
+augroup END
 
 " Control character highlighting.
-set list listchars=tab:⇥⇥,eol:↵
+" set list listchars=tab:⇥⇥,eol:↵
 
 " Tab settings.
 set expandtab
@@ -46,3 +52,11 @@ autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
+
+
+" Search setting.
+set magic
+set incsearch
+set hlsearch
+set ignorecase
+set smartcase

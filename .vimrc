@@ -21,6 +21,9 @@ set encoding=utf8
 " Numbered lines.
 set number
 
+" column number
+set ruler
+
 " Keep cursor away from edges of screen.
 set so=14
 

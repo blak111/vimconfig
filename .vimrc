@@ -1,7 +1,7 @@
-call pathogen#infect()
-call pathogen#helptags()
-call vundle#rc()
-Bundle 'gmarik/vundle'
+"call pathogen#infect()
+"call pathogen#helptags()
+"call vundle#rc()
+"Bundle 'gmarik/vundle'
 "Bundle 'Valloric/YouCompleteMe'
 execute pathogen#infect()
 
@@ -63,3 +63,5 @@ set incsearch
 set hlsearch
 set ignorecase
 set smartcase
+
+autocmd BufWritePost *.py call Flake8()
